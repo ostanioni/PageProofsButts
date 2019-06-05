@@ -1,0 +1,110 @@
+<head>
+
+</head>
+
+<body>
+  <style>
+    /* Stretch all, fixed spacing */
+    .container {
+      display: flex;
+    }
+
+    .item {
+      flex-grow: 1;
+      height: 100px;
+      border: 1px solid blue;
+    }
+
+    .item+.item {
+      margin-left: 2%;
+    }
+  </style>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+    <div class="item">11</div>
+    <div class="item">12</div>
+  </div>
+  <!-- ... -->
+  <style>
+      /*Stretch middle, fixed spacing*/
+      .container2 {
+        display: flex;
+      }
+  
+      .item2 {
+        height: 100px;
+        width: 100px;
+        /* A fixed width as the default */
+        border: 1px solid blue;
+      }
+  
+      .item2-center {
+        flex-grow: 1;
+        border: 1px solid blue;
+        /* Set the middle element to grow and stretch */
+      }
+  
+      .item2+.item2 {
+        margin-left: 2%;
+      }
+   </style>
+  <div class="container2">
+    <div class="item2">1</div>
+    <div class="item2-center">2</div>
+    <div class="item2">3</div>
+    <div class="item2">4</div>
+    <div class="item2-center">5</div>
+    <div class="item2">6</div>
+    <div class="item2">7</div>
+    <div class="item2">8</div>
+    <div class="item2-center">9</div>
+    <div class="item2">10</div>
+    <div class="item2">11</div>
+    <div class="item2">12</div>
+  </div>
+  <!-- ... -->
+  <style>
+    /*Alternating grid*/
+    .container3 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .item3 {
+      width: 48%;
+      height: 100px;
+      margin-bottom: 2%;
+      border: 1px solid blue;
+    }
+
+    .item3:nth-child(3n) {
+      width: 100%;
+    }
+  </style>
+  <div class="container3">
+      <div class="item3">1</div>
+      <div class="item3">2</div>
+      <div class="item3">3</div>
+      <div class="item3">4</div>
+      <div class="item3">5</div>
+      <div class="item3">6</div>
+      <div class="item3">7</div>
+      <div class="item3">8</div>
+      <div class="item3">9</div>
+      <div class="item3">10</div>
+      <div class="item3">11</div>
+      <div class="item3">12</div>
+    </div>
+    <!-- ... -->
+
+</body>
