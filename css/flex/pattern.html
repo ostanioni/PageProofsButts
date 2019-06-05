@@ -1,5 +1,5 @@
 <head>
-<link src="https://tobiasahlin.com/blog/common-flexbox-patterns/">
+  <link src="https://tobiasahlin.com/blog/common-flexbox-patterns/">
 </head>
 
 <body>
@@ -338,20 +338,31 @@
   <!-- ... -->
   <style>
     /* Masonry (or mosaic) */
+    .container8 {
+      display: flex;
+      flex-flow: column wrap;
+      align-content: space-between;
+      height: 580px;
+    }
+
+    .item8 {
+      width: 32%;
+      margin-bottom: 2%;
+      border:midnightblue 1px solid;
+      /* (100-32*3)/2 */
+    }
+
     /* Re-order items into rows */
     .item8:nth-child(3n+1) {
       order: 1;
-      border: black 1px solid;
     }
 
     .item8:nth-child(3n+2) {
       order: 2;
-      border: black 1px solid;
     }
 
     .item8:nth-child(3n) {
       order: 3;
-      border: black 1px solid;
     }
 
     /* Force new columns */
@@ -361,14 +372,25 @@
       flex-basis: 100%;
       width: 0;
       order: 2;
-      border: maroon 1px solid;
     }
   </style>
   <div class="container8">
-    <div class="item8">1</div>
-    <div class="item8">2</div>
-    <div class="item8">3</div>
-    <div class="item8">4</div>
+    <div class="item8">1
+      rfgre
+      rgerer
+      regeg
+      ege
+      ege
+    </div>
+    <div class="item8">2
+      <div style="height:100px;"></div>
+    </div>
+    <div class="item8">3
+        <div style="height:70px;"></div>
+    </div>
+    <div class="item8">4
+        <div style="height:50px;"></div>
+    </div>
     <div class="item8">5</div>
     <div class="item8">6</div>
     <div class="item8">7</div>
