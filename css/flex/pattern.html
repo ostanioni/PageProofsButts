@@ -1,0 +1,404 @@
+<head>
+  <link src="https://tobiasahlin.com/blog/common-flexbox-patterns/">
+</head>
+
+<body>
+  <style>
+    /* Stretch all, fixed spacing */
+    .container {
+      display: flex;
+    }
+
+    .item {
+      flex-grow: 1;
+      height: 100px;
+      border: 1px solid brown;
+    }
+
+    .item+.item {
+      margin-left: 2%;
+    }
+  </style>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+    <div class="item">11</div>
+    <div class="item">12</div>
+  </div>
+  <!-- ... -->
+  <style>
+    /*Stretch middle, fixed spacing*/
+    .container2 {
+      display: flex;
+    }
+
+    .item2 {
+      height: 100px;
+      width: 100px;
+      /* A fixed width as the default */
+      border: 1px solid cyan;
+    }
+
+    .item2-center {
+      flex-grow: 1;
+      border: 1px solid cyan;
+      /* Set the middle element to grow and stretch */
+    }
+
+    .item2+.item2 {
+      margin-left: 2%;
+    }
+  </style>
+  <div class="container2">
+    <div class="item2">1</div>
+    <div class="item2-center">2</div>
+    <div class="item2">3</div>
+    <div class="item2">4</div>
+    <div class="item2-center">5</div>
+    <div class="item2">6</div>
+    <div class="item2">7</div>
+    <div class="item2">8</div>
+    <div class="item2-center">9</div>
+    <div class="item2">10</div>
+    <div class="item2">11</div>
+    <div class="item2">12</div>
+  </div>
+  <!-- ... -->
+  <style>
+    /*Alternating grid*/
+    .container3 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .item3 {
+      width: 48%;
+      height: 100px;
+      margin-bottom: 2%;
+      border: 1px solid blue;
+    }
+
+    .item3:nth-child(3n) {
+      width: 100%;
+    }
+  </style>
+  <div class="container3">
+    <div class="item3">1</div>
+    <div class="item3">2</div>
+    <div class="item3">3</div>
+    <div class="item3">4</div>
+    <div class="item3">5</div>
+    <div class="item3">6</div>
+    <div class="item3">7</div>
+    <div class="item3">8</div>
+    <div class="item3">9</div>
+    <div class="item3">10</div>
+    <div class="item3">11</div>
+    <div class="item3">12</div>
+  </div>
+  <!-- ... -->
+  <style>
+    /* 3x3 grid */
+    .container4 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .item4 {
+      flex: 0 32%;
+      height: 100px;
+      margin-bottom: 2%;
+      /* (100-32*3)/2 */
+      border: 1px solid red;
+    }
+  </style>
+  <div class="container4">
+    <div class="item4">1</div>
+    <div class="item4">2</div>
+    <div class="item4">3</div>
+    <div class="item4">4</div>
+    <div class="item4">5</div>
+    <div class="item4">6</div>
+    <div class="item4">7</div>
+    <div class="item4">8</div>
+    <div class="item4">9</div>
+    <div class="item4">10</div>
+    <div class="item4">11</div>
+    <div class="item4">12</div>
+  </div>
+  <!-- ... -->
+  <style>
+    /*3x3 grid, constrained proportions (1:1)*/
+    .container5 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .item5 {
+      width: 32%;
+      padding-bottom: 32%;
+      /* Same as width, sets height */
+      margin-bottom: 2%;
+      /* (100-32*3)/2 */
+      position: relative;
+      border: 1px solid green;
+    }
+  </style>
+  <div class="container5">
+    <div class="item5">1</div>
+    <div class="item5">2</div>
+    <div class="item5">3</div>
+    <div class="item5">4</div>
+    <div class="item5">5</div>
+    <div class="item5">6</div>
+    <div class="item5">7</div>
+    <div class="item5">8</div>
+    <div class="item5">9</div>
+    <div class="item5">10</div>
+    <div class="item5">11</div>
+    <div class="item5">12</div>
+  </div>
+  <!-- ... -->
+  <style>
+    /*3x3 grid, constrained proportions (16:9)*/
+    .container6 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .item6 {
+      width: 32%;
+      padding-bottom: 18%;
+      /* 32:18, i.e. 16:9 */
+      margin-bottom: 2%;
+      /* (100-32*3)/2 */
+      border: 1px solid grey;
+    }
+  </style>
+  <div class="container6">
+    <div class="item6">1</div>
+    <div class="item6">2</div>
+    <div class="item6">3</div>
+    <div class="item6">4</div>
+    <div class="item6">5</div>
+    <div class="item6">6</div>
+    <div class="item6">7</div>
+    <div class="item6">8</div>
+    <div class="item6">9</div>
+    <div class="item6">10</div>
+    <div class="item6">11</div>
+    <div class="item6">12</div>
+  </div>
+  <!-- ... -->
+  <style>
+    /* Graph: vertical bars */
+    .container7 {
+      display: flex;
+      height: 300px;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .item {
+      width: 8%;
+    }
+
+    .item-1 {
+      width: 8%;
+      height: 40%;
+      border: maroon 1px solid;
+    }
+
+    .item-2 {
+      width: 8%;
+      height: 50%;
+      border: maroon 1px solid;
+    }
+
+    .item-3 {
+      width: 8%;
+      height: 60%;
+      border: maroon 1px solid;
+    }
+
+    .item-4 {
+      width: 8%;
+      height: 20%;
+      border: maroon 1px solid;
+    }
+
+    .item-5 {
+      width: 8%;
+      height: 30%;
+      border: maroon 1px solid;
+    }
+
+    .item-6 {
+      width: 8%;
+      height: 40%;
+      border: maroon 1px solid;
+    }
+
+    .item-7 {
+      width: 8%;
+      height: 50%;
+      border: maroon 1px solid;
+    }
+
+    .item-8 {
+      width: 8%;
+      height: 60%;
+      border: maroon 1px solid;
+    }
+
+    .item-9 {
+      width: 8%;
+      height: 20%;
+      border: maroon 1px solid;
+    }
+
+    .item-10 {
+      width: 8%;
+      height: 30%;
+      border: maroon 1px solid;
+    }
+  </style>
+  <div class="container7">
+    <div class="item-1">1</div>
+    <div class="item-2">2</div>
+    <div class="item-3">3</div>
+    <div class="item-4">4</div>
+    <div class="item-5">5</div>
+    <div class="item-6">6</div>
+    <div class="item-7">7</div>
+    <div class="item-8">8</div>
+    <div class="item-9">9</div>
+    <div class="item-10">10</div>
+  </div>
+  <!--...-->
+  <style>
+    /* Graph: horizontal bars */
+    .container {
+      display: flex;
+      height: 300px;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    .item {
+      height: 14%;
+    }
+
+    .item-1 {
+      width: 40%;
+    }
+
+    .item-2 {
+      width: 50%;
+    }
+
+    .item-3 {
+      width: 60%;
+    }
+
+    .item-4 {
+      width: 20%;
+    }
+
+    .item-5 {
+      width: 30%;
+    }
+  </style>
+  <!-- ... -->
+  <style>
+    /* Vertical stack (centered) */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .item {
+      height: 40px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <!-- ... -->
+  <style>
+    /* Masonry (or mosaic) */
+    .container8 {
+      display: flex;
+      flex-flow: column wrap;
+      align-content: space-between;
+      height: 580px;
+    }
+
+    .item8 {
+      width: 32%;
+      margin-bottom: 2%;
+      border:midnightblue 1px solid;
+      /* (100-32*3)/2 */
+    }
+
+    /* Re-order items into rows */
+    .item8:nth-child(3n+1) {
+      order: 1;
+    }
+
+    .item8:nth-child(3n+2) {
+      order: 2;
+    }
+
+    .item8:nth-child(3n) {
+      order: 3;
+    }
+
+    /* Force new columns */
+    .container8::before,
+    .container8::after {
+      content: "";
+      flex-basis: 100%;
+      width: 0;
+      order: 2;
+    }
+  </style>
+  <div class="container8">
+    <div class="item8">1
+      rfgre
+      rgerer
+      regeg
+      ege
+      ege
+    </div>
+    <div class="item8">2
+      <div style="height:100px;"></div>
+    </div>
+    <div class="item8">3
+        <div style="height:70px;"></div>
+    </div>
+    <div class="item8">4
+        <div style="height:50px;"></div>
+    </div>
+    <div class="item8">5</div>
+    <div class="item8">6</div>
+    <div class="item8">7</div>
+    <div class="item8">8</div>
+    <div class="item8">9</div>
+    <div class="item8">10</div>
+    <div class="item8">11</div>
+    <div class="item8">12</div>
+  </div>
+
+</body>
